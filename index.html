@@ -7,7 +7,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#08090a;--s:#111214;--s2:#191b1e;--s3:#21242a;--b:#2a2d33;--bl:#363a42;--t:#eaedf2;--tm:#7a818d;--td:#505660;--a:#4e8cff;--ad:rgba(78,140,255,.12);--g:#2dd4a0;--gd:rgba(45,212,160,.1);--r:#f0555a;--rd:rgba(240,85,90,.1);--am:#f5a623;--amd:rgba(245,166,35,.1)}
+:root{--bg:#08090a;--s:#111214;--s2:#191b1e;--s3:#21242a;--b:#2a2d33;--bl:#363a42;--t:#eaedf2;--tm:#7a818d;--td:#505660;--a:#4e8cff;--g:#2dd4a0;--gd:rgba(45,212,160,.1);--r:#f0555a;--am:#f5a623}
 html{font-size:16px;scroll-behavior:smooth}
 body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.55;-webkit-font-smoothing:antialiased}
 .slide{min-height:100vh;padding:56px 72px;display:flex;flex-direction:column;justify-content:center;position:relative;border-bottom:1px solid var(--b)}
@@ -15,14 +15,14 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var
 .br{position:absolute;top:28px;left:40px;font-size:.62rem;color:var(--td);letter-spacing:4px;text-transform:uppercase}
 .cover{justify-content:center;align-items:center;text-align:center}
 .cover h1{font-size:3.6rem;font-weight:900;letter-spacing:-2.5px;line-height:1.05;margin-bottom:14px;background:linear-gradient(135deg,var(--t),var(--tm));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.cover .sub{font-size:1rem;color:var(--tm);font-weight:400;margin-bottom:44px;max-width:560px;line-height:1.7}
+.cover .sub{font-size:1rem;color:var(--tm);font-weight:400;margin-bottom:44px;max-width:580px;line-height:1.7}
 .cover .date{font-size:.72rem;color:var(--td);letter-spacing:3px;text-transform:uppercase}
 .al{width:48px;height:2px;background:var(--a);margin:26px auto;border-radius:2px}
 h2{font-size:1.75rem;font-weight:800;letter-spacing:-1px;margin-bottom:10px}
 h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
-.ss{color:var(--tm);font-size:.85rem;margin-bottom:36px;max-width:680px;line-height:1.7}
+.ss{color:var(--tm);font-size:.85rem;margin-bottom:36px;max-width:700px;line-height:1.7}
 .kg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px}
-.kg.f{grid-template-columns:repeat(4,1fr)}.kg.t{grid-template-columns:repeat(2,1fr)}
+.kg.f{grid-template-columns:repeat(4,1fr)}
 .k{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:22px 20px;transition:border-color .2s}
 .k:hover{border-color:var(--bl)}
 .k .l{font-size:.65rem;color:var(--td);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
@@ -39,7 +39,6 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 .co{background:var(--s);border-left:3px solid var(--a);padding:16px 20px;border-radius:0 10px 10px 0;margin-top:24px;font-size:.83rem;line-height:1.7}
 .co strong{color:var(--a)}.co.cg{border-left-color:var(--g)}.co.cg strong{color:var(--g)}.co.ca{border-left-color:var(--am)}.co.ca strong{color:var(--am)}.co.cr{border-left-color:var(--r)}.co.cr strong{color:var(--r)}
 .cm{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
-.cm.c3{grid-template-columns:1fr 1fr 1fr}
 .sc{background:var(--s);border:1px solid var(--b);border-radius:12px;padding:24px 20px}
 .sc.best{border-color:var(--g);background:linear-gradient(180deg,rgba(45,212,160,.04),transparent)}
 .sc h3{font-size:.88rem;margin-bottom:12px}
@@ -63,7 +62,6 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 .stb td{padding:11px 12px;border-bottom:1px solid var(--b)}.stb tr:last-child td{border-bottom:none}
 .stb .bst td{background:var(--gd)}
 .tc{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:14px}
-/* Simulator */
 .sim{background:linear-gradient(180deg,var(--s),var(--bg));border:1px solid var(--b);border-radius:14px;padding:32px;margin-top:28px}
 .sg{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}
 .scs{display:flex;flex-direction:column;gap:18px}
@@ -76,7 +74,7 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 .sre{background:var(--s2);border:1px solid var(--b);border-radius:9px;padding:14px 16px}
 .sre .l{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--td);margin-bottom:5px}
 .sre .v{font-size:1.3rem;font-weight:800;font-variant-numeric:tabular-nums}
-@media(max-width:768px){.slide{padding:36px 20px}.cover h1{font-size:2rem}.kg,.kg.f{grid-template-columns:1fr 1fr}.cm,.cm.c3,.st,.sg,.tc{grid-template-columns:1fr}.dt,.stb{font-size:.7rem}}
+@media(max-width:768px){.slide{padding:36px 20px}.cover h1{font-size:2rem}.kg,.kg.f{grid-template-columns:1fr 1fr}.cm,.st,.sg,.tc{grid-template-columns:1fr}.dt,.stb{font-size:.7rem}.dt th,.dt td,.stb th,.stb td{padding:8px 6px}}
 @media print{.slide{page-break-after:always}body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sim{display:none}}
 </style>
 </head>
@@ -86,51 +84,51 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 <section class="slide cover">
 <h1>Limpieza Boat Haus<br>Jun &mdash; Dic 2026</h1>
 <div class="al"></div>
-<p class="sub">Forecast con datos reales de WhatsApp, conciliacion de facturas Holded, y simulador de escenarios operativos.</p>
-<p class="date">Octorate + Holded + WhatsApp &middot; Junio 2026</p>
+<p class="sub">Forecast operativo, conciliacion de facturas, analisis de tarifas LC, y simulador de escenarios. Basado en datos reales de WhatsApp + Holded + Octorate.</p>
+<p class="date">Junio 2026 &middot; 18 casas flotantes &middot; La Linea</p>
 </section>
 
 <!-- 02 DATOS REALES -->
 <section class="slide">
 <span class="br">Boat Haus</span><span class="sn">02</span>
 <h2>Lo que dicen los datos reales</h2>
-<p class="ss">4 meses cruzando los dos grupos de WhatsApp (LC + Cinthia) con las facturas de Holded.</p>
+<p class="ss">4 meses cruzando los dos grupos de WhatsApp (LC + Cinthia) con facturas Holded. 20,643 mensajes analizados.</p>
 <div class="kg f">
-<div class="k"><div class="l">Cinthia capacidad</div><div class="v">6<span style="font-size:.55em;font-weight:400">/dia</span></div><div class="n">23 dias/mes &middot; hace 5 habitual, puede 6</div></div>
-<div class="k"><div class="l">LC real</div><div class="v">6.8<span style="font-size:.55em;font-weight:400">/dia</span></div><div class="n">cubre excedente + dias OFF Cinthia</div></div>
-<div class="k"><div class="l">Total real</div><div class="v ac">9.0<span style="font-size:.55em;font-weight:400">/dia</span></div><div class="n">~271 barcos/mes (Feb-May)</div></div>
-<div class="k"><div class="l">Tarifa LC</div><div class="v">&euro;16.72<span style="font-size:.55em;font-weight:400">/h</span></div><div class="n">1.15h/barco = &euro;19.23/barco sin IVA</div></div>
+<div class="k"><div class="l">Cinthia capacidad</div><div class="v">6<span style="font-size:.55em;font-weight:400">/dia</span></div><div class="n">23 dias/mes &middot; puede 6, hace 5 habitual</div></div>
+<div class="k"><div class="l">Hija capacidad</div><div class="v">5<span style="font-size:.55em;font-weight:400">/dia</span></div><div class="n">cap interna total: 11/dia</div></div>
+<div class="k"><div class="l">Total real</div><div class="v ac">9.0<span style="font-size:.55em;font-weight:400">/dia</span></div><div class="n">~271 barcos/mes (Feb-May real)</div></div>
+<div class="k"><div class="l">LC hoy</div><div class="v am">191<span style="font-size:.55em;font-weight:400">h/mes</span></div><div class="n">cubre 57% de las limpiezas</div></div>
 </div>
 <div class="co ca">
-<strong>Dato clave:</strong> Cinthia puede hacer hasta 6/dia pero habitualmente hace 5 (cuando LC tambien viene, no se la explota). Hija puede hacer 5/dia. Entre las dos: capacidad 11/dia. Trabajan ~23 dias/mes. Los dias OFF, LC cubre TODO.
+<strong>Dato clave:</strong> Con Cinthia sola, LC necesita ~191h/mes. Con Cinthia + hija (cap 11/dia), baja a solo <strong>80h/mes</strong>. Los 7 dias OFF/mes que no vienen las internas, LC cubre todo.
 </div>
 </section>
 
-<!-- 03 CONCILIACION -->
+<!-- 03 CONCILIACION FACTURAS -->
 <section class="slide">
 <span class="br">Boat Haus</span><span class="sn">03</span>
 <h2>Conciliacion: WhatsApp vs facturas Holded</h2>
-<p class="ss">Cada factura cruzada con los barcos reales asignados a LC en el grupo de WhatsApp.</p>
+<p class="ss">Barcos asignados a LC en el grupo de WhatsApp cruzados con las horas facturadas en Holded.</p>
 <table class="dt">
 <thead><tr><th>Mes</th><th class="ri">Cinthia</th><th class="ri">LC barcos</th><th class="ri">Total</th><th class="ri">Horas fact.</th><th class="ri">h/barco</th><th class="ri">&euro;/barco</th></tr></thead>
 <tbody>
 <tr><td>Feb 2026</td><td class="ri">98</td><td class="ri">135</td><td class="ri">233</td><td class="ri">191.5h</td><td class="ri hi">1.42h</td><td class="ri">&euro;23.72</td></tr>
 <tr><td>Mar 2026</td><td class="ri">123</td><td class="ri">193</td><td class="ri">316</td><td class="ri">183.5h</td><td class="ri">0.95h</td><td class="ri">&euro;15.90</td></tr>
-<tr><td>Abr 2026</td><td class="ri">133</td><td class="ri">122</td><td class="ri">255</td><td class="ri" colspan="2" style="color:var(--td)">sin factura</td><td class="ri" style="color:var(--td)">&mdash;</td></tr>
-<tr><td>May 2026</td><td class="ri">115</td><td class="ri">183</td><td class="ri">298</td><td class="ri">201.2h</td><td class="ri">1.21h</td><td class="ri">&euro;20.27</td></tr>
+<tr><td>Abr 2026</td><td class="ri">133</td><td class="ri">122</td><td class="ri">255</td><td class="ri" style="color:var(--td)">s/factura</td><td class="ri" style="color:var(--td)">&mdash;</td><td class="ri" style="color:var(--td)">&mdash;</td></tr>
+<tr><td>May 2026</td><td class="ri">115</td><td class="ri">183</td><td class="ri">298</td><td class="ri">201.2h</td><td class="ri">1.10h</td><td class="ri">&euro;18.39</td></tr>
 <tr class="tr"><td><strong>TOTAL</strong></td><td class="ri"><strong>469</strong></td><td class="ri"><strong>616</strong></td><td class="ri"><strong>1,085</strong></td><td class="ri"><strong>576h</strong></td><td class="ri"><strong>1.15h</strong></td><td class="ri"><strong>&euro;19.23</strong></td></tr>
 </tbody>
 </table>
 <div class="co">
-<strong>Reparto real:</strong> Cinthia hace el 43% de las limpiezas, LC el 57%. Febrero tiene 1.42h/barco (posibles extras zonas comunes). Marzo es el mas eficiente: 0.95h/barco.
+<strong>Tarifa actual confirmada:</strong> &euro;16.72/hora (factura F26G00228, Mayo). Media de 1.15h por barco = &euro;19.23/barco sin IVA. Factura de Mayo chequeada barco por barco contra WhatsApp: <strong>cuadra</strong>.
 </div>
 </section>
 
-<!-- 04 FORECAST NOCHES -->
+<!-- 04 FORECAST -->
 <section class="slide">
 <span class="br">Boat Haus</span><span class="sn">04</span>
 <h2>Forecast noches y checkouts Jun&mdash;Dic</h2>
-<p class="ss">Proyeccion basada en ocupacion 2025 + estancia media historica. Para cruzar con revenue.</p>
+<p class="ss">Proyeccion basada en ocupacion 2025. Para cruzar con modelo de revenue.</p>
 <table class="dt">
 <thead><tr><th>Mes</th><th class="ri">Occ.</th><th class="ri">Room nights</th><th class="ri">Est. media</th><th class="ri">Checkouts</th><th class="ri">Limp/dia</th></tr></thead>
 <tbody>
@@ -145,104 +143,131 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 </tbody>
 </table>
 <div class="co">
-<strong>Para revenue:</strong> 3,529 room nights. Con ADR ~&euro;200 = ~&euro;706K produccion. El costo de limpieza es 4&ndash;6% del revenue segun escenario.
+<strong>Revenue:</strong> 3,529 room nights &times; ADR ~&euro;200 = ~&euro;706K produccion bruta. Limpieza = 4&ndash;6% del revenue segun escenario.
 </div>
 </section>
 
-<!-- 05 ESCENARIO A — HOY -->
+<!-- 05 HOY vs CON HIJA -->
 <section class="slide">
 <span class="br">Boat Haus</span><span class="sn">05</span>
-<h2>Hoy: Cinthia sola + LC variable</h2>
-<p class="ss">Con Cinthia haciendo 5/dia y 23 dias/mes, LC tiene que cubrir mucho mas de lo que creiamos.</p>
-<table class="dt">
-<thead><tr><th>Mes</th><th class="ri">Total</th><th class="ri">Cinthia</th><th class="ri">LC barcos</th><th class="ri">Horas LC</th><th class="ri">Costo LC+IVA</th></tr></thead>
-<tbody>
-<tr><td>Jun</td><td class="ri">294</td><td class="ri">115</td><td class="ri re">179</td><td class="ri">205h</td><td class="ri">&euro;4,156</td></tr>
-<tr><td>Jul</td><td class="ri">273</td><td class="ri">115</td><td class="ri">158</td><td class="ri">182h</td><td class="ri">&euro;3,679</td></tr>
-<tr><td>Ago</td><td class="ri">258</td><td class="ri">115</td><td class="ri">143</td><td class="ri">164h</td><td class="ri">&euro;3,321</td></tr>
-<tr><td>Sep</td><td class="ri">273</td><td class="ri">115</td><td class="ri">158</td><td class="ri">182h</td><td class="ri">&euro;3,676</td></tr>
-<tr><td>Oct</td><td class="ri hi">312</td><td class="ri">115</td><td class="ri re">197</td><td class="ri">226h</td><td class="ri">&euro;4,579</td></tr>
-<tr><td>Nov</td><td class="ri">280</td><td class="ri">115</td><td class="ri">165</td><td class="ri">189h</td><td class="ri">&euro;3,828</td></tr>
-<tr><td>Dic</td><td class="ri">279</td><td class="ri">115</td><td class="ri">164</td><td class="ri">189h</td><td class="ri">&euro;3,816</td></tr>
-<tr class="tr"><td><strong>TOTAL</strong></td><td class="ri"><strong>1,968</strong></td><td class="ri"><strong>805</strong></td><td class="ri re"><strong>1,163</strong></td><td class="ri"><strong>1,337h</strong></td><td class="ri re"><strong>&euro;27,055</strong></td></tr>
-</tbody>
-</table>
-<div class="co cr">
-<strong>Costo actual real:</strong> Cinthia ~&euro;1,400 + LC &euro;3,865 = <strong>&euro;5,265/mes</strong>. LC factura ~191h/mes promedio. Estamos pagando mucho mas de lo que creiamos.
-</div>
-</section>
-
-<!-- 06 CON HIJA: REPARTO -->
-<section class="slide">
-<span class="br">Boat Haus</span><span class="sn">06</span>
-<h2>Con la hija: reparto real</h2>
-<p class="ss">Cinthia 6/dia + hija 5/dia = 11 de capacidad. LC solo para dias OFF y picos excepcionales.</p>
-<div class="bc">
-<div class="lg">
-<span class="li"><span class="ld" style="background:var(--a)"></span>Cinthia (6/dia)</span>
-<span class="li"><span class="ld" style="background:#7c6ef5"></span>Hija (5/dia)</span>
-<span class="li"><span class="ld" style="background:var(--am)"></span>LC (dias OFF + picos)</span>
-</div>
-<div class="br2"><div class="bl2">Jun</div><div class="bt"><div class="sb"><div class="bc1" style="width:41%">138</div><div class="bc2" style="width:35%">87</div><div class="bc3" style="width:24%">69</div></div></div><div class="bv">294 &middot; 9.8/d</div></div>
-<div class="br2"><div class="bl2">Jul</div><div class="bt"><div class="sb"><div class="bc1" style="width:43%">138</div><div class="bc2" style="width:31%">65</div><div class="bc3" style="width:26%">70</div></div></div><div class="bv">273 &middot; 8.8/d</div></div>
-<div class="br2"><div class="bl2">Ago</div><div class="bt"><div class="sb"><div class="bc1" style="width:45%">138</div><div class="bc2" style="width:29%">53</div><div class="bc3" style="width:26%">67</div></div></div><div class="bv">258 &middot; 8.3/d</div></div>
-<div class="br2"><div class="bl2">Sep</div><div class="bt"><div class="sb"><div class="bc1" style="width:43%">138</div><div class="bc2" style="width:33%">71</div><div class="bc3" style="width:24%">64</div></div></div><div class="bv">273 &middot; 9.1/d</div></div>
-<div class="br2"><div class="bl2">Oct</div><div class="bt"><div class="sb"><div class="bc1" style="width:39%">138</div><div class="bc2" style="width:35%">94</div><div class="bc3" style="width:26%">80</div></div></div><div class="bv">312 &middot; 10.1/d</div></div>
-<div class="br2"><div class="bl2">Nov</div><div class="bt"><div class="sb"><div class="bc1" style="width:43%">138</div><div class="bc2" style="width:34%">77</div><div class="bc3" style="width:23%">65</div></div></div><div class="bv">280 &middot; 9.3/d</div></div>
-<div class="br2"><div class="bl2">Dic</div><div class="bt"><div class="sb"><div class="bc1" style="width:43%">138</div><div class="bc2" style="width:31%">69</div><div class="bc3" style="width:26%">72</div></div></div><div class="bv">279 &middot; 9.0/d</div></div>
-</div>
-<div class="co cg">
-<strong>Con las dos (cap 11/dia):</strong> LC baja de 1,163 a 487 barcos en 7 meses (&minus;58%). Sigue necesitando ~80h/mes para cubrir los ~7 dias OFF/mes y picos excepcionales &gt;11/dia.
-</div>
-</section>
-
-<!-- 07 COMPARATIVA 5 ESCENARIOS -->
-<section class="slide">
-<span class="br">Boat Haus</span><span class="sn">07</span>
-<h2>5 escenarios comparados</h2>
-<p class="ss">Equipo interno = Cinthia + hija = &euro;2,500/mes con cargas. LC a tarifa actual &euro;16.72/h.</p>
-<table class="stb">
-<thead><tr><th>Escenario</th><th class="ri">LC horas/mes</th><th class="ri">&euro;/mes</th><th class="ri">7 meses</th><th class="ri">vs Hoy</th></tr></thead>
-<tbody>
-<tr><td>A) <strong>Hoy</strong>: Cinthia + LC variable</td><td class="ri">191h</td><td class="ri re">&euro;5,265</td><td class="ri re">&euro;36,855</td><td class="ri">&mdash;</td></tr>
-<tr><td>B) +Hija + LC on-demand</td><td class="ri">80h</td><td class="ri">&euro;4,118</td><td class="ri">&euro;28,828</td><td class="ri gr">&minus;&euro;8,021</td></tr>
-<tr class="bst"><td>C) +Hija + LC 100h/mes <span class="tag">Sweet spot</span></td><td class="ri">100h</td><td class="ri">&euro;4,523</td><td class="ri">&euro;31,662</td><td class="ri gr">&minus;&euro;5,193</td></tr>
-<tr><td>D) +Hija + LC 150h/mes</td><td class="ri">150h</td><td class="ri">&euro;5,535</td><td class="ri">&euro;38,743</td><td class="ri re">+&euro;1,888</td></tr>
-<tr><td>E) +Hija + LC 75h/mes</td><td class="ri">75h</td><td class="ri">&euro;4,017</td><td class="ri">&euro;28,121</td><td class="ri gr">&minus;&euro;8,733</td></tr>
-</tbody>
-</table>
-<div class="co cg">
-<strong>Opcion C (100h):</strong> Ahorra &euro;5,193 en 7 meses vs hoy. Las 100h cubren los 80h necesarios + 20h extras para restaurante, baneria o imprevistos. Precio fijo, sin sorpresas.
-</div>
-</section>
-
-<!-- 08 POR QUE 100h -->
-<section class="slide">
-<span class="br">Boat Haus</span><span class="sn">08</span>
-<h2>Por que 100 horas es el numero</h2>
-<p class="ss">Desglose de como se usan las 100h/mes de LC con el equipo interno.</p>
+<h2>Hoy vs con la hija: el cambio</h2>
+<p class="ss">El impacto de sumar a la hija en horas de LC necesarias.</p>
 <div class="cm">
 <div class="sc">
-<h3>Necesidad real: 80h/mes</h3>
+<h3>Hoy: Cinthia sola</h3>
 <ul>
-<li><span>Dias OFF Cinthia+hija (~7/mes)</span><span>~58h</span></li>
-<li><span>Picos &gt;11 limp/dia (pocos dias)</span><span>~10h</span></li>
+<li><span>Capacidad interna</span><span>6/dia</span></li>
+<li><span>Dias internos/mes</span><span>23</span></li>
+<li><span>LC necesario</span><span style="color:var(--r)">191h/mes</span></li>
+<li><span>LC cubre</span><span>57% de limpiezas</span></li>
+<li><span>Costo Cinthia</span><span>&euro;1,400/mes</span></li>
+<li><span>Costo LC (191h &times; &euro;16.72)</span><span style="color:var(--r)">&euro;3,864/mes</span></li>
+<li><span><strong>TOTAL</strong></span><span style="color:var(--r)"><strong>&euro;5,264/mes</strong></span></li>
+</ul>
+</div>
+<div class="sc best">
+<h3>Con hija: equipo de 2</h3>
+<ul>
+<li><span>Capacidad interna</span><span style="color:var(--g)">11/dia</span></li>
+<li><span>Dias internos/mes</span><span>23</span></li>
+<li><span>LC necesario</span><span style="color:var(--g)">80h/mes</span></li>
+<li><span>LC cubre</span><span>solo dias OFF + picos</span></li>
+<li><span>Costo equipo (las 2)</span><span>&euro;2,500/mes</span></li>
+<li><span>Costo LC depende tarifa</span><span>&darr; ver abajo</span></li>
+<li><span><strong>Pregunta: cuantas horas?</strong></span><span></span></li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- 06 TARIFA ACTUAL vs NUEVA -->
+<section class="slide">
+<span class="br">Boat Haus</span><span class="sn">06</span>
+<h2>Tarifa actual vs propuesta LC</h2>
+<p class="ss">LC propone &euro;19.06/h (150h = &euro;2,858.64 + IVA) con todo incluido. Hoy pagamos &euro;16.72/h sin extras.</p>
+<div class="cm">
+<div class="sc">
+<h3>Tarifa actual: &euro;16.72/h</h3>
+<ul>
+<li><span>Precio/hora</span><span>&euro;16.72</span></li>
+<li><span>Productos limpieza</span><span style="color:var(--r)">No incluido</span></li>
+<li><span>Uniformes</span><span style="color:var(--r)">No incluido</span></li>
+<li><span>Seguros / RC</span><span style="color:var(--r)">No incluido</span></li>
+<li><span>Utensilios</span><span style="color:var(--r)">No incluido</span></li>
+<li><span>Gestion ausencias/vacaciones</span><span style="color:var(--r)">No incluido</span></li>
+<li><span>Extras estimados</span><span style="color:var(--am)">~&euro;300-400/mes</span></li>
+</ul>
+</div>
+<div class="sc">
+<h3>Tarifa nueva: &euro;19.06/h <span class="tag">Todo incluido</span></h3>
+<ul>
+<li><span>Precio/hora</span><span>&euro;19.06 (+14%)</span></li>
+<li><span>Productos limpieza</span><span style="color:var(--g)">Incluido</span></li>
+<li><span>Uniformes</span><span style="color:var(--g)">Incluido</span></li>
+<li><span>Seguros / RC</span><span style="color:var(--g)">Incluido</span></li>
+<li><span>Utensilios</span><span style="color:var(--g)">Incluido</span></li>
+<li><span>Gestion ausencias/vacaciones</span><span style="color:var(--g)">Incluido</span></li>
+<li><span>Extras</span><span style="color:var(--g)">&euro;0</span></li>
+</ul>
+</div>
+</div>
+<div class="co">
+<strong>Equivalencia:</strong> 100h a &euro;19.06 cuesta lo mismo que 114h a &euro;16.72. Pero con los extras incluidos (~&euro;400/mes), <strong>la tarifa nueva sale igual o mas barata</strong> y sin gestion.
+</div>
+</section>
+
+<!-- 07 COMPARATIVA COMPLETA -->
+<section class="slide">
+<span class="br">Boat Haus</span><span class="sn">07</span>
+<h2>Todos los escenarios en plata</h2>
+<p class="ss">Equipo interno (Cinthia + hija) = &euro;2,500/mes con cargas. LC a ambas tarifas.</p>
+<table class="stb">
+<thead><tr><th>Escenario</th><th class="ri">LC/mes (IVA)</th><th class="ri">&euro;/mes total</th><th class="ri">7 meses</th><th class="ri">vs Hoy</th></tr></thead>
+<tbody>
+<tr><td><strong>Hoy:</strong> Cinthia + LC 191h @&euro;16.72</td><td class="ri">&euro;3,864</td><td class="ri re">&euro;5,264</td><td class="ri re">&euro;36,849</td><td class="ri">&mdash;</td></tr>
+<tr><td colspan="5" style="padding:8px 12px;color:var(--td);font-size:.7rem;text-transform:uppercase;letter-spacing:1px">Con hija &mdash; tarifa actual (&euro;16.72/h)</td></tr>
+<tr><td>&nbsp;&nbsp;+Hija + LC 75h</td><td class="ri">&euro;1,517</td><td class="ri">&euro;4,017</td><td class="ri">&euro;28,121</td><td class="ri gr">&minus;&euro;8,728</td></tr>
+<tr><td>&nbsp;&nbsp;+Hija + LC 100h</td><td class="ri">&euro;2,023</td><td class="ri">&euro;4,523</td><td class="ri">&euro;31,662</td><td class="ri gr">&minus;&euro;5,187</td></tr>
+<tr><td colspan="5" style="padding:8px 12px;color:var(--td);font-size:.7rem;text-transform:uppercase;letter-spacing:1px">Con hija &mdash; tarifa nueva (&euro;19.06/h, todo incluido)</td></tr>
+<tr><td>&nbsp;&nbsp;+Hija + LC 80h</td><td class="ri">&euro;1,845</td><td class="ri">&euro;4,345</td><td class="ri">&euro;30,413</td><td class="ri gr">&minus;&euro;6,436</td></tr>
+<tr class="bst"><td>&nbsp;&nbsp;+Hija + LC 100h <span class="tag">Recomendado</span></td><td class="ri">&euro;2,306</td><td class="ri">&euro;4,806</td><td class="ri">&euro;33,644</td><td class="ri gr">&minus;&euro;3,205</td></tr>
+<tr><td>&nbsp;&nbsp;+Hija + LC 125h</td><td class="ri">&euro;2,882</td><td class="ri">&euro;5,382</td><td class="ri">&euro;37,676</td><td class="ri" style="color:var(--am)">+&euro;827</td></tr>
+<tr><td>&nbsp;&nbsp;+Hija + LC 150h</td><td class="ri">&euro;3,459</td><td class="ri">&euro;5,959</td><td class="ri re">&euro;41,711</td><td class="ri re">+&euro;4,862</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- 08 RECOMENDACION -->
+<section class="slide">
+<span class="br">Boat Haus</span><span class="sn">08</span>
+<h2>Recomendacion: 100h a tarifa nueva</h2>
+<p class="ss">El mejor equilibrio entre ahorro, cobertura y cero gestion de extras.</p>
+<div class="kg">
+<div class="k"><div class="l">Costo mensual</div><div class="v ac">&euro;4,806</div><div class="n">equipo &euro;2,500 + LC &euro;2,306</div></div>
+<div class="k"><div class="l">Ahorro vs hoy</div><div class="v g">&minus;&euro;458<span style="font-size:.5em">/mes</span></div><div class="n">&euro;3,205 en 7 meses</div></div>
+<div class="k"><div class="l">Margen LC</div><div class="v">+20<span style="font-size:.55em;font-weight:400">h/mes</span></div><div class="n">para restaurante, baneria, imprevistos</div></div>
+</div>
+<div class="cm">
+<div class="sc">
+<h3>Las 80h necesarias cubren</h3>
+<ul>
+<li><span>7 dias OFF/mes (Cin+hija no vienen)</span><span>~58h</span></li>
+<li><span>Picos &gt;11 limp/dia</span><span>~10h</span></li>
 <li><span>Variabilidad / imprevistos</span><span>~12h</span></li>
 </ul>
 </div>
 <div class="sc best">
-<h3>100h cubre + margen</h3>
+<h3>Las 20h de margen para</h3>
 <ul>
-<li><span>Necesidad barcos</span><span>83h</span></li>
-<li><span>Margen disponible</span><span style="color:var(--g)">17h</span></li>
-<li><span>&rarr; Restaurante 1972</span><span style="color:var(--g)">extra</span></li>
-<li><span>&rarr; Baneria / comunes</span><span style="color:var(--g)">extra</span></li>
-<li><span>&rarr; Enfermedad / vacaciones</span><span style="color:var(--g)">cubierto</span></li>
+<li><span>Limpieza restaurante 1972</span><span style="color:var(--g)">Extra</span></li>
+<li><span>Baneria / zonas comunes</span><span style="color:var(--g)">Extra</span></li>
+<li><span>Enfermedad Cin o hija</span><span style="color:var(--g)">Cubierto</span></li>
+<li><span>Vacaciones</span><span style="color:var(--g)">Cubierto</span></li>
 </ul>
 </div>
 </div>
-<div class="co ca">
-<strong>75h esta justo:</strong> necesitamos 80h/mes, con 75h faltan 5h. Funciona la mayoria de los meses pero en Octubre (10.1/dia) puede quedar corto. <strong>150h es excesivo:</strong> sobran 70h/mes, pagando &euro;1,170/mes de mas.
+<div class="co cg">
+<strong>Por que tarifa nueva:</strong> &euro;19.06/h incluye productos, uniformes, seguros, utensilios, gestion de ausencias. Esos extras cuestan ~&euro;300-400/mes si los gestionas vos. Con tarifa nueva, el costo real es igual o menor y sin dolor de cabeza.
 </div>
 </section>
 
@@ -250,7 +275,7 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 <section class="slide" style="justify-content:flex-start;padding-top:44px;">
 <span class="br">Boat Haus</span><span class="sn">09</span>
 <h2>Simulador de costos</h2>
-<p class="ss">Mover los controles para probar distintos escenarios. Datos reales de WhatsApp como base.</p>
+<p class="ss">Mover los controles para probar escenarios. Base: datos reales de 4 meses de WhatsApp.</p>
 <div class="sim">
 <div class="sg">
 <div class="scs">
@@ -259,47 +284,42 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 <div class="scc"><label>Dias internos / mes</label><div class="sr"><input type="range" id="s3" min="18" max="28" step="1" value="23"><span class="sv" id="v3">23</span></div></div>
 <div class="scc"><label>Horas LC contratadas / mes</label><div class="sr"><input type="range" id="s4" min="0" max="200" step="5" value="100"><span class="sv" id="v4">100h</span></div></div>
 <div class="scc"><label>Sueldo equipo total (con cargas)</label><div class="sr"><input type="range" id="s5" min="1000" max="4000" step="100" value="2500"><span class="sv" id="v5">&euro;2,500</span></div></div>
-<div class="scc"><label>Tarifa LC (&euro;/hora)</label><div class="sr"><input type="range" id="s6" min="14" max="22" step=".25" value="16.72"><span class="sv" id="v6">&euro;16.72</span></div></div>
+<div class="scc"><label>Tarifa LC (&euro;/hora)</label><div class="sr"><input type="range" id="s6" min="14" max="22" step=".25" value="19.06"><span class="sv" id="v6">&euro;19.06</span></div></div>
 </div>
 <div>
-<div class="srs" id="sr">
+<div class="srs">
 <div class="sre"><div class="l">Equipo / mes</div><div class="v" id="r1">&euro;2,500</div></div>
-<div class="sre"><div class="l">LC / mes (IVA)</div><div class="v" id="r2" style="color:var(--am)">&euro;2,023</div></div>
-<div class="sre"><div class="l">Total / mes</div><div class="v" id="r3" style="color:var(--a)">&euro;4,523</div></div>
-<div class="sre"><div class="l">Total 7 meses</div><div class="v" id="r4" style="color:var(--a)">&euro;31,662</div></div>
-<div class="sre"><div class="l">LC horas necesarias</div><div class="v" id="r5">83h</div></div>
+<div class="sre"><div class="l">LC / mes (IVA)</div><div class="v" id="r2" style="color:var(--am)">&euro;2,306</div></div>
+<div class="sre"><div class="l">Total / mes</div><div class="v" id="r3" style="color:var(--a)">&euro;4,806</div></div>
+<div class="sre"><div class="l">Total 7 meses</div><div class="v" id="r4" style="color:var(--a)">&euro;33,644</div></div>
+<div class="sre"><div class="l">LC horas necesarias</div><div class="v" id="r5">80h</div></div>
 <div class="sre"><div class="l">Margen LC</div><div class="v" id="r6" style="color:var(--g)">+20h</div></div>
-<div class="sre"><div class="l">vs Hoy (&euro;5,265/mes)</div><div class="v" id="r7" style="color:var(--g)">&minus;&euro;742</div></div>
-<div class="sre"><div class="l">% sobre revenue</div><div class="v" id="r8" style="color:var(--tm)">4.5%</div></div>
+<div class="sre"><div class="l">vs Hoy (&euro;5,264/mes)</div><div class="v" id="r7" style="color:var(--g)">&minus;&euro;458</div></div>
+<div class="sre"><div class="l">% sobre revenue est.</div><div class="v" id="r8" style="color:var(--tm)">4.8%</div></div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- 10 PROPUESTA -->
+<!-- 10 PROXIMOS PASOS -->
 <section class="slide">
 <span class="br">Boat Haus</span><span class="sn">10</span>
-<h2>Propuesta y proximos pasos</h2>
-<p class="ss">Basado en datos reales de 4 meses de WhatsApp + facturas Holded + reservas Octorate.</p>
-<div class="kg">
-<div class="k"><div class="l">Costo propuesto</div><div class="v ac">&euro;4,523<span style="font-size:.5em">/mes</span></div><div class="n">equipo &euro;2,500 + LC 100h &euro;2,023</div></div>
-<div class="k"><div class="l">Ahorro vs hoy</div><div class="v g">&minus;&euro;742<span style="font-size:.5em">/mes</span></div><div class="n">&euro;5,193 en 7 meses</div></div>
-<div class="k"><div class="l">LC necesario real</div><div class="v">80<span style="font-size:.55em;font-weight:400">h/mes</span></div><div class="n">100h contratadas &rarr; 20h margen</div></div>
-</div>
+<h2>Proximos pasos</h2>
+<p class="ss">Acciones concretas para cerrar el acuerdo.</p>
 <div class="st">
-<div class="stp"><div class="nm">01</div><h3>Cerrar LC a 100h/mes</h3><p>Negociar a &euro;16.72/h (tarifa actual). No aceptar subida. 100h cubre barcos + restaurante + baneria.</p></div>
-<div class="stp"><div class="nm">02</div><h3>Pedir desglose a LC</h3><p>Febrero tiene 1.42h/barco vs 0.95h en Marzo. Pedir parte de horas por dia para entender la diferencia.</p></div>
-<div class="stp"><div class="nm">03</div><h3>Revisar en Septiembre</h3><p>Con 3 meses de data real del nuevo esquema, ajustar. Si sobran horas bajar a 85h. Si faltan subir a 110h.</p></div>
+<div class="stp"><div class="nm">01</div><h3>Negociar 100h a &euro;19.06</h3><p>Propuesta LC es 150h a &euro;19.06. Contraoferta: 100h al mismo precio por hora. Ahorro de &euro;458/mes vs hoy con todo incluido.</p></div>
+<div class="stp"><div class="nm">02</div><h3>Pedir desglose Febrero</h3><p>Febrero tiene 1.42h/barco vs 1.10h en Mayo. Posibles extras de zonas comunes. Aclarar que entra y que no en las 100h.</p></div>
+<div class="stp"><div class="nm">03</div><h3>Revisar en Septiembre</h3><p>3 meses de data real del nuevo esquema. Si sobran horas, bajar a 85h. Si faltan, subir a 110h. El simulador permite proyectar al instante.</p></div>
 </div>
 <div class="co" style="margin-top:28px;">
-<strong>Metodologia:</strong> 4,875 reservas Octorate + 5 facturas Holded (&euro;16,940) + 20,643 mensajes WhatsApp (2 grupos, Feb-Jun). Cinthia: hasta 6/dia, hija: hasta 5/dia, 23 dias/mes. LC real: 1.15h/barco a &euro;16.72/h. 18 casas flotantes, ocupacion proyectada desde patrones 2025.
+<strong>Metodologia:</strong> 4,875 reservas Octorate + 5 facturas Holded (&euro;16,940) + 20,643 mensajes de 2 grupos WhatsApp (Feb-Jun 2026). Cinthia: hasta 6/dia, hija: hasta 5/dia, 23 dias/mes. LC: 1.15h/barco. Tarifa actual &euro;16.72/h, propuesta &euro;19.06/h todo incluido. 18 casas flotantes.
 </div>
 </section>
 
 <script>
 const F=[{d:30,a:9.8},{d:31,a:8.8},{d:31,a:8.3},{d:30,a:9.1},{d:31,a:10.1},{d:30,a:9.3},{d:31,a:9.0}];
-const hoy=5265,rev=706000,hpb=1.15;
+const hoy=5264,rev=706000,hpb=1.15;
 function U(){
 const c=+document.getElementById('s1').value,h=+document.getElementById('s2').value,
 di=+document.getElementById('s3').value,lh=+document.getElementById('s4').value,
