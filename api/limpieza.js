@@ -187,7 +187,7 @@ module.exports = async function handler(req, res) {
     const totalDays = stats.reduce((s, m) => s + m.days, 0);
     const totalOcc = totalRN / (TOTAL_ROOMS * totalDays);
     const totalAvg = totalCO > 0 ? totalRN / totalCO : 0;
-    const totalLC = stats.reduce((s, m) => s + m.lcTotal, 0);
+    const lcTotal = stats.reduce((s, m) => s + m.lcTotal, 0);
 
     res.json({
       fetchedAt: new Date().toISOString(),
