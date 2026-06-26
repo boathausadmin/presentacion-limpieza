@@ -153,10 +153,10 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 <section class="slide">
 <span class="br">Boat Haus</span><span class="sn">05</span>
 <h2>Forecast Jun&mdash;Dic: ocupacion y limpiezas</h2>
-<p class="ss">Proyeccion basada en 2025. Para cruzar con revenue.</p>
+<p class="ss" id="forecast-subtitle">Cargando datos reales de Octorate&hellip;</p>
 <table class="dt">
 <thead><tr><th>Mes</th><th class="ri">Occ.</th><th class="ri">Room nights</th><th class="ri">Est. media</th><th class="ri">Checkouts</th><th class="ri">Limp/dia</th></tr></thead>
-<tbody>
+<tbody id="forecast-tbody">
 <tr><td>Junio</td><td class="ri">78%</td><td class="ri">470</td><td class="ri">1.6n</td><td class="ri">294</td><td class="ri">9.8</td></tr>
 <tr><td>Julio</td><td class="ri">84%</td><td class="ri">519</td><td class="ri">1.9n</td><td class="ri">273</td><td class="ri">8.8</td></tr>
 <tr><td>Agosto</td><td class="ri hi">87%</td><td class="ri hi">541</td><td class="ri hi">2.1n</td><td class="ri">258</td><td class="ri">8.3</td></tr>
@@ -206,7 +206,7 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 <p class="ss">Desglose: entre semana LC cubre picos &gt;11/dia. Los fines de semana cubre lo que pasa de 5 barcos.</p>
 <table class="dt">
 <thead><tr><th>Mes</th><th class="ri">Limp/dia</th><th class="ri">LC entre semana</th><th class="ri">LC fines de semana</th><th class="ri">LC horas total</th></tr></thead>
-<tbody>
+<tbody id="lc-tbody">
 <tr><td>Junio</td><td class="ri">9.8</td><td class="ri hi">18h</td><td class="ri">44h</td><td class="ri">62h</td></tr>
 <tr><td>Julio</td><td class="ri">8.8</td><td class="ri">12h</td><td class="ri">35h</td><td class="ri">47h</td></tr>
 <tr><td>Agosto</td><td class="ri">8.3</td><td class="ri">8h</td><td class="ri">30h</td><td class="ri">38h</td></tr>
@@ -379,7 +379,8 @@ h3{font-size:.95rem;font-weight:600;margin-bottom:8px}
 </section>
 
 <script>
-const F=[{d:30,a:9.8,lv:22,fs:8},{d:31,a:8.8,lv:23,fs:8},{d:31,a:8.3,lv:23,fs:8},{d:30,a:9.1,lv:22,fs:8},{d:31,a:10.1,lv:23,fs:8},{d:30,a:9.3,lv:22,fs:8},{d:31,a:9.0,lv:23,fs:8}];
+// F can be updated with real Octorate data (see loadOctorate below)
+let F=[{d:30,a:9.8,lv:22,fs:8},{d:31,a:8.8,lv:23,fs:8},{d:31,a:8.3,lv:23,fs:8},{d:30,a:9.1,lv:22,fs:8},{d:31,a:10.1,lv:23,fs:8},{d:30,a:9.3,lv:22,fs:8},{d:31,a:9.0,lv:23,fs:8}];
 const hoy=5264,hpb=1.15;
 function U(){
 const c=+document.getElementById('s1').value,h=+document.getElementById('s2').value,
@@ -412,6 +413,111 @@ const r8=document.getElementById('r8');r8.innerHTML=(ah7>=0?'':'&minus;')+('&eur
 }
 ['s1','s2','s7','s4','s5','s6'].forEach(i=>document.getElementById(i).addEventListener('input',U));
 U();
+
+// --- Octorate live data ---
+function pct(v){return Math.round(v*100)+'%';}
+function dec(v,n=1){return v.toFixed(n);}
+
+function renderForecast(months,totals){
+  const MAX_CO=Math.max(...months.map(m=>m.checkouts));
+  const MAX_CPD=Math.max(...months.map(m=>m.cleaningsPerDay));
+  const MAX_OCC=Math.max(...months.map(m=>m.occ));
+  const MAX_RN=Math.max(...months.map(m=>m.roomNights));
+
+  const rows=months.map(m=>{
+    const hiCO=m.checkouts===MAX_CO;
+    const hiCPD=m.cleaningsPerDay===MAX_CPD;
+    const hiOCC=m.occ===MAX_OCC;
+    const hiRN=m.roomNights===MAX_RN;
+    return `<tr>
+      <td>${m.name}</td>
+      <td class="ri${hiOCC?' hi':''}">${pct(m.occ)}</td>
+      <td class="ri${hiRN?' hi':''}">${m.roomNights.toLocaleString()}</td>
+      <td class="ri">${dec(m.avgStay,1)}n</td>
+      <td class="ri${hiCO?' hi':''}">${m.checkouts}</td>
+      <td class="ri${hiCPD?' hi':''}">${dec(m.cleaningsPerDay,1)}</td>
+    </tr>`;
+  }).join('');
+
+  const t=totals;
+  const totalRow=`<tr class="tr">
+    <td><strong>TOTAL</strong></td>
+    <td class="ri"><strong>${pct(t.occ)}</strong></td>
+    <td class="ri"><strong>${t.roomNights.toLocaleString()}</strong></td>
+    <td class="ri"><strong>${dec(t.avgStay,1)}n</strong></td>
+    <td class="ri"><strong>${t.checkouts.toLocaleString()}</strong></td>
+    <td class="ri"><strong>${dec(t.cleaningsPerDay,1)}</strong></td>
+  </tr>`;
+
+  document.getElementById('forecast-tbody').innerHTML=rows+totalRow;
+}
+
+function renderLC(months,totals){
+  const MAX_LC=Math.max(...months.map(m=>m.lcTotal));
+  const MAX_CPD=Math.max(...months.map(m=>m.cleaningsPerDay));
+
+  const rows=months.map(m=>{
+    const hiLC=m.lcTotal===MAX_LC;
+    const hiCPD=m.cleaningsPerDay===MAX_CPD;
+    return `<tr>
+      <td>${m.name}</td>
+      <td class="ri${hiCPD?' hi':''}">${dec(m.cleaningsPerDay,1)}</td>
+      <td class="ri${hiLC?' hi':''}">${m.lcWeekday}h</td>
+      <td class="ri${hiLC?' hi':''}">${m.lcWeekend}h</td>
+      <td class="ri${hiLC?' hi':''}">${m.lcTotal}h</td>
+    </tr>`;
+  }).join('');
+
+  const avgLC=Math.round(months.reduce((s,m)=>s+m.lcTotal,0)/months.length);
+  const totalLCh=months.reduce((s,m)=>s+m.lcTotal,0);
+  const avgLCwd=Math.round(months.reduce((s,m)=>s+m.lcWeekday,0)/months.length);
+  const avgLCfs=Math.round(months.reduce((s,m)=>s+m.lcWeekend,0)/months.length);
+
+  const totalRow=`<tr class="tr">
+    <td><strong>TOTAL / PROM</strong></td>
+    <td class="ri"><strong>${dec(totals.cleaningsPerDay,1)}</strong></td>
+    <td class="ri"><strong>${avgLCwd}h</strong></td>
+    <td class="ri"><strong>${avgLCfs}h</strong></td>
+    <td class="ri"><strong>${avgLC}h/mes</strong></td>
+  </tr>`;
+
+  document.getElementById('lc-tbody').innerHTML=rows+totalRow;
+}
+
+function updateSimulatorF(months){
+  F=months.map(m=>({
+    d:m.days,
+    a:m.cleaningsPerDay,
+    lv:m.weekdays,
+    fs:m.weekendDays,
+  }));
+  U();
+}
+
+async function loadOctorate(){
+  try{
+    const resp=await fetch('/api/limpieza');
+    if(!resp.ok) throw new Error('API '+resp.status);
+    const data=await resp.json();
+    if(!data.months||!data.months.length) throw new Error('Sin datos');
+
+    renderForecast(data.months, data.totals);
+    renderLC(data.months, data.totals);
+    updateSimulatorF(data.months);
+
+    const ts=new Date(data.fetchedAt);
+    const label=ts.toLocaleString('es-ES',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+    document.getElementById('forecast-subtitle').innerHTML=
+      'Datos reales Octorate &mdash; '+data.totalReservations+' reservas confirmadas. '
+      +'<span style="color:var(--g)">&#9679;</span> Actualizado '+label;
+  }catch(e){
+    console.warn('Octorate load failed:',e.message);
+    document.getElementById('forecast-subtitle').textContent=
+      'Proyecci\u00f3n basada en 2025. (Octorate no disponible: '+e.message+')';
+  }
+}
+
+loadOctorate();
 </script>
 </body>
 </html>
